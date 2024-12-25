@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL-NOOR FABRICS</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=mail" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header{
+    color: white;
+    padding: 2%;
+    text-align: center;
+    background-color: #ccf4f3;
+    border-radius: 20px;
+    position:static;
+    background-image: url(./HEADERBACK.jpg);
+    background-size: 1300px 500px;
+    box-shadow: 0px 2px 4px rgb(129, 129, 129);
+}
+header .cart {
+    position: absolute;
+    nav-down: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+header .cart::after {
+    content: attr(data-count);
+    position: absolute;
+    nav-down: -10px;
+    left: 30px;
+    background-color: red;
+    background-size: 1300px 500px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+    
+
+        
+        .container {
+            padding: 20px;
+        }
+
+        .filter-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .filter-section select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .product button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .product button:hover {
+            background-color: #32d0db;
+        }
+
+      
+}
+    </style>
+</head>
+<body>
+    
+    <header>
+        <img src="https://img.freepik.com/free-vector/gradient-clothing-store-logo-design_23-2149484085.jpg?t=st=1734872265~exp=1734875865~hmac=6ad6014bfe386edd8e089f0829c859fd88a9620dc0f397b3d90d6944bb3907be&w=740" alt="our logo" class="logo">
+        <br><br>
+        <h1 id="name">AL-NOOR FABRICS</h1>
+        <div>
+            <nav>
+                <a href="home.html" class="header-links">HOME</a>
+                <a href="about.html" class="header-links">ABOUTUS</a>
+                <a href="contact.html" class="header-links">CONTACT</a>
+                <a href="service.html" class="header-links">SHOP HERE</a>
+                <a href="team.html" class="header-links">OUR TEAM</a>
+            </nav>
+        </div>
+      </br>
+        <div class="cart" id="cart" data-count="0">
+            🛒Cart
+        </div>
+         </header>
+         <br>
+   
+    <div class="container">
+        
+        <div class="filter-section">
+            <label for="filter">Sort By:</label>
+            <select id="filter" onchange="filterProducts()">
+                <option value="all">All</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+                <option value="popularity">Popularity</option>
+            </select>
+        </div>
+
+       
+        <div class="products" id="products">
+          
+            <div class="product" data-price="20" data-popularity="4">
+                <img src="https://cdn.shopify.com/s/files/1/0528/5163/8441/products/BPPRDPT405cs2T2830N7AAB_2_3d794ba2-0ccf-4324-8eba-b3f2f777a602_540x.jpg?v=1683204747" alt="Elegant Kurta Fabric">
+                <h3>Elegant Kurta Fabric</h3>
+                <p>Price: $20</p>
+                <button onclick="addToCart('Elegant Kurta Fabric')">Add to Cart</button>
+            </div>
+            
+            <div class="product" data-price="15" data-popularity="5">
+                <img src="https://cdn.shopify.com/s/files/1/0528/5163/8441/products/BPJQJCS225SZ1T2893N8AAB_2_540x.jpg?v=1678442891" alt="Stylish Dupatta">
+                <h3>Stylish Dupatta</h3>
+                <p>Price: $15</p>
+                <button onclick="addToCart('Stylish Dupatta')">Add to Cart</button>
+            </div>
+            
+            <div class="product" data-price="25" data-popularity="3">
+                <img src="https://cdn.shopify.com/s/files/1/0528/5163/8441/products/BPJQJCS143MS5T2818N4AAB_2_d1380106-2f71-4a16-a041-d43136f938ad_540x.jpg?v=1678430693" alt="Classic Lawn Print">
+                <h3>Classic Lawn Print</h3>
+                <p>Price: $25</p>
+                <button onclick="addToCart('Classic Lawn Print')">Add to Cart</button>
+            </div>
+         
+            <div class="product" data-price="50" data-popularity="2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF66F15ZZZ6z_MisML187Ub0Huj-Shx2nJwA&s" alt="Chiffon Saree">
+                <h3>Chiffon Saree</h3>
+                <p>Price: $50</p>
+                <button onclick="addToCart('Chiffon Saree')">Add to Cart</button>
+            </div>
+           <div class="product" data-price="15" data-popularity="2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlQ2MW654vrER7K4qyUGqyLTPMEz0ZxOiy0w&s" alt="BOY'S SHIRT">
+                <h3>Boy's Shirts </h3>
+                <p>Price: $15</p>
+                <button onclick="addToCart('BOY'S SHIRT')">Add to Cart</button>
+            </div>
+            <div class="product" data-price="50" data-popularity="2">
+                <img src="https://i.pinimg.com/236x/e6/c7/80/e6c78014db4bf57212af7c73b6d3aab0.jpg" alt="Boy's DressCourt">
+                <h3>Boy's DressCourt </h3>
+                <p>Price: $50</p>
+                <button onclick="addToCart('Boy's DressCourt')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+   
+    <footer>
+        <h3>Thanks for visiting our site.</h3>
+<div class="ll">
+    <i class="fa-brands fa-instagram"></i>
+<h3><a href="www.instagram.com" class="links" >Instagram</a></h3>
+<i class="fa-brands fa-facebook"></i>
+<h3><a href="www.facebook.com"  class="links" >FaceBook</a></h3>
+<span class="material-symbols-outlined">mail</span>
+<h3><a href="www.email.com"  class="links">Email</a></h3>
+</div>
+<h4>&copy;AL-NOOR FABRICS. </h4>
+
+    </footer>
+
+    <script>
+        let cartCount = 0;
+
+        // Add to Cart Functionality
+        function addToCart(productName) {
+            cartCount++;
+            document.getElementById("cart").setAttribute("data-count", cartCount);
+            alert(productName + " has been added to your cart!");
+        }
+
+        // Filter Functionality
+        function filterProducts() {
+            const filter = document.getElementById("filter").value;
+            const products = Array.from(document.querySelectorAll(".product"));
+
+            if (filter === "low-high") {
+                products.sort((a, b) => a.getAttribute("data-price") - b.getAttribute("data-price"));
+            } else if (filter === "high-low") {
+                products.sort((a, b) => b.getAttribute("data-price") - a.getAttribute("data-price"));
+            } else if (filter === "popularity") {
+                products.sort((a, b) => b.getAttribute("data-popularity") - a.getAttribute("data-popularity"));
+            }
+
+            const container = document.getElementById("products");
+            container.innerHTML = "";
+            products.forEach(product => container.appendChild(product));
+        }
+    </script>
+</body>
+</html>
